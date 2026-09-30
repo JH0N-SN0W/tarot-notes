@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>塔罗笔记</title>
+  <meta name="description" content="塔罗笔记。流行解释供反思，不是事实，也不是对未来的承诺。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <p class="kicker" id="kicker"></p>
+      <h1>塔罗笔记</h1>
+      <p class="sub">Tarot Notes</p>
+    </div>
+    <button type="button" id="lang-toggle" class="lang" aria-pressed="false">EN</button>
+  </header>
+  <main>
+    <p class="position" id="position"></p>
+    <p class="boundary" id="boundary"></p>
+    <section class="draw" aria-labelledby="draw-label">
+      <div class="draw-bar">
+        <h2 id="draw-label"></h2>
+        <button type="button" id="draw-btn" class="draw-btn"></button>
+      </div>
+      <div id="draw-result"></div>
+    </section>
+    <nav class="sections" id="sections" aria-label="sections"></nav>
+    <section class="list" id="list"></section>
+  </main>
+  <footer>
+    <p id="footer"></p>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>
