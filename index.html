@@ -8,30 +8,51 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="top">
-    <div class="brand">
-      <p class="kicker" id="kicker"></p>
-      <h1>塔罗笔记</h1>
-      <p class="sub">Tarot Notes</p>
-    </div>
-    <button type="button" id="lang-toggle" class="lang" aria-pressed="false">EN</button>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span data-i18n="ui.brand">塔罗笔记</span>
+      <small data-i18n="ui.brandEn">Tarot Notes</small>
+    </a>
+    <nav class="nav-links" aria-label="页面">
+      <a href="#cards" data-i18n="ui.nav.0">五张牌</a><a href="#draw" data-i18n="ui.nav.1">抽一张</a><a href="#how" data-i18n="ui.nav.2">怎么读</a><a href="#journal" data-i18n="ui.nav.3">手记</a><a href="#boundary" data-i18n="ui.nav.4">边界</a>
+    </nav>
+    <button type="button" id="lang-toggle" class="lang" aria-pressed="false" data-i18n="ui.toggle">EN</button>
   </header>
-  <main>
-    <p class="position" id="position"></p>
-    <p class="boundary" id="boundary"></p>
-    <section class="draw" aria-labelledby="draw-label">
-      <div class="draw-bar">
-        <h2 id="draw-label"></h2>
-        <button type="button" id="draw-btn" class="draw-btn"></button>
-      </div>
-      <div id="draw-result"></div>
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow" data-i18n="ui.kicker">供反思，不是预言</p>
+      <h1 data-i18n="ui.heroTitle">一张牌，写一页就够</h1>
+      <p class="lede" data-i18n="ui.heroLede">只收五张大阿卡纳。流行解释可以读。它不是事实。它也不承诺以后。</p>
+      <p class="hero-actions">
+        <a class="btn solid" href="#draw" data-i18n="ui.ctaDraw">抽一张</a>
+        <a class="btn ghost" href="#cards" data-i18n="ui.ctaCards">看这五张</a>
+      </p>
     </section>
-    <nav class="sections" id="sections" aria-label="sections"></nav>
-    <section class="list" id="list"></section>
+    <section class="draw" id="draw" aria-labelledby="draw-title">
+      <div class="draw-copy">
+        <p class="eyebrow" data-i18n="ui.drawEyebrow">一次一张</p>
+        <h2 id="draw-title" data-i18n="ui.drawTitle">抽一张，对照今天</h2>
+        <p class="section-lead" data-i18n="ui.drawLead">从这五张里抽。读到的是通行说法。用来想一想。不是算命结果。</p>
+        <button type="button" id="draw-btn" class="btn solid" data-i18n="ui.drawBtn">抽一张</button>
+      </div>
+      <div class="draw-stage">
+        <div class="draw-card" id="draw-card"><svg class="plate back-plate" viewBox="0 0 200 320" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M28 28h144v264H28z"/><path d="M40 40h120v240H40z"/><path d="M100 160m-7 0a7 7 0 1 0 0.1 0"/></g></svg></div>
+        <div id="draw-result">
+          <p class="fine" data-i18n="ui.drawEmpty">还没有抽。牌面是本站的线稿。</p>
+        </div>
+      </div>
+    </section>
+    <section class="cards" id="cards" aria-labelledby="cards-title">
+      <p class="eyebrow" data-i18n="ui.cardsEyebrow">大阿卡纳 · 0 到 IV</p>
+      <h2 id="cards-title" data-i18n="ui.cardsTitle">五张图版</h2>
+      <p class="section-lead" data-i18n="ui.cardsLead">点一张，读它的注记。历史在前。流行解释在后，并标明只供反思。</p>
+      <div class="grid">
+        <a class="face" href="#note-fool" data-id="fool"><span class="face-num">0</span><svg class="plate" viewBox="0 0 200 320" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M46 250h92"/><path d="M132 118a11 11 0 1 1-22 0a11 11 0 1 1 22 0"/><path d="M121 129c8 6 12 14 10 24"/><path d="M121 142c-16 6-24 18-22 32"/><path d="M123 154l22 8"/><path d="M121 168l-18 36"/><path d="M121 168l24 28"/><path d="M145 196l10 4"/><path d="M62 78a16 16 0 1 1 0.1 0"/></g></svg><span class="face-name" data-i18n="card.fool.name">愚者</span><span class="face-title" data-i18n="card.fool.title">先走一小步</span></a><a class="face" href="#note-magician" data-id="magician"><span class="face-num">I</span><svg class="plate" viewBox="0 0 200 320" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M48 214h104"/><path d="M92 186h26v24h-26z"/><path d="M118 186l18-26"/><path d="M104 112a11 11 0 1 1-22 0a11 11 0 1 1 22 0"/><path d="M93 123v34"/><path d="M93 140l28 28"/><path d="M93 170l-16 40"/><path d="M93 170l18 40"/><path d="M70 86v46"/></g></svg><span class="face-name" data-i18n="card.magician.name">魔术师</span><span class="face-title" data-i18n="card.magician.title">先用已经有的</span></a><a class="face" href="#note-priestess" data-id="priestess"><span class="face-num">II</span><svg class="plate" viewBox="0 0 200 320" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M58 74v168"/><path d="M118 126a11 11 0 1 1-22 0a11 11 0 1 1 22 0"/><path d="M107 118c18 10 22 28 8 40"/><path d="M107 148v28"/><path d="M107 160c-18 10-22 8-26 22"/><path d="M107 160c16 8 22 8 26 20"/><path d="M96 176c-8 22-6 36 2 48"/><path d="M118 176c10 20 8 36 2 48"/><path d="M128 168h18v26h-18z"/></g></svg><span class="face-name" data-i18n="card.priestess.name">女祭司</span><span class="face-title" data-i18n="card.priestess.title">先停一下</span></a><a class="face" href="#note-empress" data-id="empress"><span class="face-num">III</span><svg class="plate" viewBox="0 0 200 320" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M64 236c28 18 62 18 90 0"/><path d="M124 120a11 11 0 1 1-22 0a11 11 0 1 1 22 0"/><path d="M113 112c16 2 22 14 16 24"/><path d="M113 142v26"/><path d="M113 154l-26 16"/><path d="M113 156l24 12"/><path d="M113 168c-28 10-20 36-4 44"/><path d="M113 168c26 12 22 34 6 44"/><path d="M62 236V188"/><path d="M62 200c-16-6-14-20-2-24"/><path d="M62 190c14-8 16-20 4-26"/></g></svg><span class="face-name" data-i18n="card.empress.name">女皇</span><span class="face-title" data-i18n="card.empress.title">照料已经在长的</span></a><a class="face" href="#note-emperor" data-id="emperor"><span class="face-num">IV</span><svg class="plate" viewBox="0 0 200 320" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M48 70h104v180H48z"/><path d="M100 118a11 11 0 1 1-22 0a11 11 0 1 1 22 0"/><path d="M89 129v46"/><path d="M89 146h26"/><path d="M89 175l-12 42"/><path d="M89 175l14 42"/><path d="M132 150v62"/><path d="M126 150h12"/><path d="M126 212h12"/></g></svg><span class="face-name" data-i18n="card.emperor.name">皇帝</span><span class="face-title" data-i18n="card.emperor.title">这条规则是谁的</span></a>
+      </div>
+      <div class="notes">
+MARKER
+      </div>
+    </section>
   </main>
-  <footer>
-    <p id="footer"></p>
-  </footer>
-  <script src="js/site.js"></script>
 </body>
 </html>
